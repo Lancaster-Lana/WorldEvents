@@ -1,0 +1,61 @@
+﻿@model EditUserViewModel
+
+@using WorldEvents.Models
+@using WorldEvents.Entities
+@using Microsoft.AspNetCore.Identity
+
+@inject RoleManager<ApplicationRole> RoleManager
+@{
+    var allRoles = Model.ApplicationRoles ?? RoleManager.Roles.ToList();
+}
+
+@using (Html.BeginForm("EditUser", "User", new { area = "Admin", controller = "User" }, FormMethod.Post, true, new { enctype = "multipart/form-data" }))
+{
+    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = "Edit User" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="modal-body form-horizontal">
+        <div class="row">
+            @Html.HiddenFor(m => m.Id)
+            <div class="form-group">
+                <label asp-for="Name" class="col-lg-3 col-sm-3 control-label"></label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Name, new { Class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="col-lg-3 col-sm-3 control-label"></label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Email, new { Class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ApplicationRoleId" class="col-lg-3 col-sm-3 control-label"></label>
+                <div class="col-lg-6">
+                    @*<select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                            <option>Please select</option>
+                        </select>*@
+                    @Html.DropDownListFor(x => x.ApplicationRoleId, new SelectList(allRoles, "Id", "Name", Model.ApplicationRoleId), new { Class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_ModalFooter", new ModalFooter { SubmitButtonText = "Save" })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

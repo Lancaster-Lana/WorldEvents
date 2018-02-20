@@ -1,0 +1,101 @@
+﻿@model IEnumerable<WorldEvents.Entities.Event>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenantId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsCancelled)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaxRegistrationCount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDeleted)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeleterUserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeletionTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastModificationTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastModifierUserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatorUserId)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenantId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCancelled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxRegistrationCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeleterUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeletionTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModificationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifierUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatorUserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.csprojResolveAssemblyReference.cache
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.csproj.CoreCompileInputs.cache
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.AssemblyInfoInputs.cache
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.AssemblyInfo.cs
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.deps.json
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.runtimeconfig.json
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.runtimeconfig.dev.json
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.dll
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.pdb
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.ApplicationServices.dll
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Core.dll
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Entities.dll
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.dll
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.ApplicationServices.pdb
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.ApplicationServices.dll.config
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.pdb
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Core.pdb
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Core.dll.config
+E:\MY\MVC\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Entities.pdb
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.dll
+E:\MY\MVC\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.deps.json
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.runtimeconfig.json
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.runtimeconfig.dev.json
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.dll
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.ApplicationServices.dll
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Core.dll
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Entities.dll
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.dll
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.ApplicationServices.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.ApplicationServices.dll.config
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Core.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Core.dll.config
+E:\MY\! GIT\WorldEvents\WorldEvents\bin\Debug\netcoreapp2.0\WorldEvents.Entities.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.csprojResolveAssemblyReference.cache
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.csproj.CoreCompileInputs.cache
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.AssemblyInfoInputs.cache
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.AssemblyInfo.cs
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.dll
+E:\MY\! GIT\WorldEvents\WorldEvents\obj\Debug\netcoreapp2.0\WorldEvents.pdb

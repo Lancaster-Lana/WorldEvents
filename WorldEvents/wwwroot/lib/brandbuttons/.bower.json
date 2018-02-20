@@ -1,0 +1,34 @@
+{
+  "name": "brandbuttons",
+  "version": "1.0.0",
+  "homepage": "https://github.com/evgenyrodionov/bootstrap-brand-buttons",
+  "authors": [
+    "Evgeny Rodionov <github@erodionov.ru> (http://erodionov.ru/)"
+  ],
+  "description": "Brand buttons for Bootstrap",
+  "main": "dist/brand-buttons.min.css",
+  "keywords": [
+    "social",
+    "brands",
+    "bootstrap",
+    "buttons"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "117c2ccd19592972b29344687be115777d717446"
+  },
+  "_source": "https://github.com/theaqua/social-buttons.scss.git",
+  "_target": "1.0.0",
+  "_originalSource": "social-buttons.scss",
+  "_direct": true
+}

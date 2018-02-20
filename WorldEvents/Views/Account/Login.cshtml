@@ -1,0 +1,107 @@
+﻿@using WorldEvents.Entities
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Log in";
+    var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+}
+
+<div class="col-md-12">
+    <div class="row login-form">
+        <section class="col-md-6">
+            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post"
+                  class="form-horizontal">
+                <h4>Use a local account to log in</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="Email" class="control-label">Username or email</label>
+                        <div class="input-icon-container">
+                            <i class="fa fa-user"></i>
+                            <input type="text" class="form-control" id="Email" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="Password" class="control-label">Password</label>
+                        <div class="input-icon-container">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" class="form-control" id="Password" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                @*<div class="form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            <label asp-for="RememberMe">
+                                <input asp-for="RememberMe" />
+                                @Html.DisplayNameFor(m => m.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success">Log in</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <a href="forgot-password.html" class="text-center">Cannot login?</a>
+                    </div>
+                </div>
+                <p>
+                    <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+                </p>
+                <p>
+                    <a asp-action="ForgotPassword">Forgot your password?</a>
+                </p>
+            </form>
+        </section>
+
+        <section class="col-md-6">
+            <h4>Use social network to log in</h4>
+            <hr />
+
+            @if (loginProviders.Count == 0)
+            {
+                <div>
+                    <p>
+                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                        for details on setting up this ASP.NET application to support logging in via external services.
+                    </p>
+                </div>
+            }
+            else
+            {
+              <form asp-controller="Account" asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                @foreach (var provider in loginProviders)
+                {
+                    <p>
+                        <button type="submit" class="btn btn-block btn-social btn-@provider.Name.ToLower()" name="provider" value="@provider.Name">
+                            <i class="fa fa-@provider.Name.ToLower()"></i>  @provider.DisplayName
+                        </button>
+                    </p>
+                 }
+               </form>
+            }
+        </section>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

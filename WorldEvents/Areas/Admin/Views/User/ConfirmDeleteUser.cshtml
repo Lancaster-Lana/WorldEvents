@@ -1,0 +1,13 @@
+﻿@using WorldEvents.Models
+@using WorldEvents.Entities
+@model ApplicationUser
+
+@using (Html.BeginForm("ConfirmDeleteUser", "User", new { area = "Admin", controller = "User", id = Model.Id }, FormMethod.Post, true, new { enctype = "multipart/form-data" }))
+{
+    @Html.Partial("_ModalHeader", new ModalHeader { Heading = "Delete User" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="modal-body form-horizontal">
+        Are you sure to delete user @Model ?
+    </div>
+    @Html.Partial("_ModalFooter", new ModalFooter { SubmitButtonText = "Delete" })
+}

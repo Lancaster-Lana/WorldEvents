@@ -1,0 +1,79 @@
+﻿@model UserViewModel
+@using WorldEvents.Models
+@using WorldEvents.Entities
+@using Microsoft.AspNetCore.Identity
+
+@inject RoleManager<ApplicationRole> RoleManager
+@{
+    var allRoles = Model.ApplicationRoles ?? RoleManager.Roles.ToList();
+}
+
+@using (Html.BeginForm("AddUser", "User", new { area = "Admin", controller = "User" }, FormMethod.Post, true, new { enctype = "multipart/form-data" }))
+{
+    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = "Add User" })
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @if (@ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            <i class="fa fa-warning"></i> @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <div class="modal-body form-horizontal">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-md-9">
+                        <input asp-for="Name" class="form-control col-md-5" />
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="col-md-3 col-sm-3 control-label"></label>
+                    <div class="col-md-9">
+                        <input asp-for="Email" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ApplicationRoleId" class="col-md-3 col-sm-3 control-label"></label>
+                    <div class="col-md-9">
+                        @*<select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                                <option>Please select</option>
+                            </select>*@
+                        @Html.DropDownListFor(x => x.ApplicationRoleId, new SelectList(allRoles, "Id", "Name", Model.ApplicationRoleId), new { Class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label asp-for="UserName" class="col-md-3 col-sm-3 control-label"></label>
+                    <div class="col-md-9">
+                        <input asp-for="UserName" class="form-control" />
+                    </div>
+                    @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-md-9">
+                        <input asp-for="Password" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-md-9">
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_ModalFooter", new ModalFooter { SubmitButtonText = "Create" })
+}

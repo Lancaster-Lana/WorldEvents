@@ -1,0 +1,22 @@
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.deps.json
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.dll
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.pdb
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.Entities.dll
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.Entities.pdb
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.csprojResolveAssemblyReference.cache
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.csproj.CoreCompileInputs.cache
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.AssemblyInfoInputs.cache
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.AssemblyInfo.cs
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.dll
+E:\MY\MVC\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.deps.json
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.dll
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.EntityFramework.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.Entities.dll
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\bin\Debug\netcoreapp2.0\WorldEvents.Entities.pdb
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.csprojResolveAssemblyReference.cache
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.csproj.CoreCompileInputs.cache
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.AssemblyInfoInputs.cache
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.AssemblyInfo.cs
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.dll
+E:\MY\! GIT\WorldEvents\WorldEvents.EntityFramework\obj\Debug\netcoreapp2.0\WorldEvents.EntityFramework.pdb

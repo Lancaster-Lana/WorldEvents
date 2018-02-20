@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Posts\Dtos\**" />
+    <EmbeddedResource Remove="Posts\Dtos\**" />
+    <None Remove="Posts\Dtos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Application\Services\CrudAppService.cs" />
+    <Compile Remove="Application\Services\ICrudAppService.cs" />
+    <Compile Remove="MultiTenancy\Dto\CreateTenantInput.cs" />
+    <Compile Remove="MultiTenancy\ITenantAppService.cs" />
+    <Compile Remove="MultiTenancy\TenantAppService.cs" />
+    <Compile Remove="Posts\IPostAppService.cs" />
+    <Compile Remove="Posts\PostAppService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Services\" />
+    <Folder Include="Posts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="3.3.0" />
+    <PackageReference Include="Abp.Zero" version="3.3.0" />
+    <PackageReference Include="Abp.AutoMapper" version="3.3.0" />
+    <PackageReference Include="AutoMapper" version="6.2.1" />
+    <PackageReference Include="Castle.Core" version="4.2.1" />
+    <PackageReference Include="Castle.LoggingFacility" version="4.1.0" />
+    <!--<PackageReference Include="Castle.Windsor" version="3.3.0" />-->
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" version="2.2.1" />
+    <PackageReference Include="Newtonsoft.Json" version="10.0.3" />
+   <!-- <PackageReference Include="Nito.AsyncEx" version="3.0.1" />
+    <PackageReference Include="System.Collections.Immutable" version="1.3.1" />-->
+    <PackageReference Include="System.Linq.Dynamic" version="1.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorldEvents.Core\WorldEvents.Core.csproj" />
+    <ProjectReference Include="..\WorldEvents.Entities\WorldEvents.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

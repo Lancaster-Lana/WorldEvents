@@ -1,0 +1,11 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: url(../images/admin_body.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+/*.body-content {
+    padding-top: 15px;
+    padding-right: 20px;
+}*/

@@ -1,0 +1,80 @@
+[
+  {
+    "outputFileName": "wwwroot/bundles/jquery.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/*.js",
+      "wwwroot/lib/jquery-validation/dist/*.js",
+      "wwwroot/lib/jquery-validation-unobtrusive/*.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/jquery.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/*.min.js",
+      "wwwroot/lib/jquery-validation/dist/*.min.js",
+      "wwwroot/lib/jquery-validation-unobtrusive/*.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/bootstrap.js",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/js/*.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/nivo-slider.min.css",
+    "inputFiles": [
+      "wwwroot/css/nivo-slider.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/orman.min.css",
+    "inputFiles": [
+      "wwwroot/css/orman.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/coda-slider.css",
+    "inputFiles": [
+      "wwwroot/css/coda-slider.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/coda-slider.min.css",
+    "inputFiles": [
+      "wwwroot/css/coda-slider.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/coda-slide.js",
+    "inputFiles": [
+      "wwwroot/js/coda-slider.js",
+      "wwwroot/js/init.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/coda-slider.min.js",
+    "inputFiles": [
+      "wwwroot/js/coda-slider.min.js",
+      "wwwroot/js/init.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/mainsite.min.css",
+    "inputFiles": [
+      "wwwroot/css/mainsite.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/adminSite.min.css",
+    "inputFiles": [
+      "wwwroot/css/adminSite.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/fullcalendar.min.css",
+    "inputFiles": [
+      "wwwroot/css/fullcalendar.css"
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+﻿@model ApplicationRoleViewModel
+@using WorldEvents.Models
+
+@using (Html.BeginForm("AddEditApplicationRole", "Role", new { area = "Admin", controller = "Role" }, FormMethod.Post, true, new { enctype = "multipart/form-data" }))
+{
+    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = $"{(String.IsNullOrEmpty(Model.Id) ? "Add" : "Edit")} Role" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @if (@ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            <i class="fa fa-warning"></i> @ViewBag.ErrorMessage
+        </div>
+    }
+    <div class="modal-body form-horizontal">
+        <div class="row">
+            <div class="form-group">
+                @Html.HiddenFor(m => m.Id )
+                <label asp-for="RoleName" class="col-lg-3 col-sm-3 control-label">Role Name</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.RoleName, new { Class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="col-lg-3 col-sm-3 control-label">Description</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Description, new { Class = "form-control" })
+                    @*<input asp-for="Description" class="form-control" />*@
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_ModalFooter", new ModalFooter {SubmitButtonText = "Save" })
+}
