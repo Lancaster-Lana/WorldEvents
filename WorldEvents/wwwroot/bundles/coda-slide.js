@@ -92,19 +92,22 @@ $(document).ready(function () {
 	// apply serialScroll to the slider - we chose this plugin because it 
 	// supports// the indexed next and previous scroll along with hooking 
 	// in to our navigation.
-	$('#slider').serialScroll(scrollOptions);
-
+    if ($('#slider')) {
+        if ($.isFunction($('#slider').serialScroll))
+            $('#slider').serialScroll(scrollOptions);
+    }
 	// now apply localScroll to hook any other arbitrary links to trigger 
 	// the effect
-	$.localScroll(scrollOptions);
+    if ($.isFunction($.localScroll)) {
+        $.localScroll(scrollOptions);
 
-	// finally, if the URL has a hash, move the slider in to position, 
-	// setting the duration to 1 because I don't want it to scroll in the
-	// very first page load.  We don't always need this, but it ensures
-	// the positioning is absolutely spot on when the pages loads.
-	scrollOptions.duration = 1;
-	$.localScroll.hash(scrollOptions);
-
+        // finally, if the URL has a hash, move the slider in to position, 
+        // setting the duration to 1 because I don't want it to scroll in the
+        // very first page load.  We don't always need this, but it ensures
+        // the positioning is absolutely spot on when the pages loads.
+        scrollOptions.duration = 1;
+        $.localScroll.hash(scrollOptions);
+    }
 });
 jQuery(function( $ ){
 	/**
