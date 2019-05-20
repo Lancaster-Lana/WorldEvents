@@ -63,6 +63,8 @@ namespace WorldEvents.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
+                //HttpContext.Authentication.SignInAsync - old 
+
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
@@ -220,6 +222,11 @@ namespace WorldEvents.Controllers
                     return View("ExternalLoginFailure");
                 }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                user.UserProfile = user.UserProfile ?? new UserProfile();
+                user.UserProfile.FirstName = model.FirstName;
+                user.UserProfile.LastName = model.LastName;
+
+                //Create user with profile for social network login
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

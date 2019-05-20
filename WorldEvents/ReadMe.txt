@@ -1,15 +1,10 @@
 ﻿To install DBs
 1. in Package Manager Console run 
-   PM> Update-Database -project WorldEvents.EntityFramework -context IdentityDbContext 
-   (and Update-Database -project WorldEvents.EntityFramework -context SatteliteDbContext - to create 2 dataBases)
-   Then look if there in SQL Server WorldEvents_IdentityDB and WorldEvents_DataDB database are created
-   NOTE: to add your own migration 
-       to Identity DB call 
-     1.1 Add-Migration <MigrationName1> -project WorldEvents.EntityFramework -context IdentityDbContext
-       to Data DB
-     1.2 Add-Migration <MigrationName2> -project WorldEvents.EntityFramework -context SatteliteDbContext
+   PM> Update-Database -project WorldEvents.EntityFramework -context SatteliteDbContext 
+    NOTE: to add your own migration 
+   PM> Add-Migration <MigrationName2> -project WorldEvents.EntityFramework -context SatteliteDbContext
 	 And then call 
-2. run application WorldEvents.Web in IIS Express. If it is running, click 'Login' on the right top corner of the site
+2. run application WorldEvents.Web. If it is running, click 'Login' on the right top corner of the site
 2.1 to login as administrator enter
   Login: Admin
   Password: Admin

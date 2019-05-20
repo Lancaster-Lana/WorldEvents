@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore;
+﻿using System;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using WorldEvents.DBModel;
-using System;
 
 namespace WorldEvents
 {
@@ -36,6 +36,7 @@ namespace WorldEvents
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseApplicationInsights() //https://developercommunity.visualstudio.com/content/problem/92979/some-aspnet-core-projects-fail-to-add-the-applicat.html
                 .Build();
     }
 }

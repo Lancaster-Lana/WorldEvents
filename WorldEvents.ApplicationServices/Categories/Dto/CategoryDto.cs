@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
+using AutoMapper;
 using WorldEvents.Entities;
 
-namespace WorldEvents.Categories
+namespace WorldEvents.Categories.Dto
 {
     [AutoMap(typeof(Category))]
     public class CategoryDto : FullAuditedEntityDto<long>

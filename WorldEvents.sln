@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldEvents.Entities", "Wor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldEvents.Core", "WorldEvents.Core\WorldEvents.Core.csproj", "{0975FACD-3B89-45B8-9341-0B524DD06D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldEvents.ApplicationServices", "WorldEvents.ApplicationServices\WorldEvents.ApplicationServices.csproj", "{6549CE1A-B78B-4551-AE1F-6FABD3BA7EF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldEvents.ApplicationServices", "WorldEvents.ApplicationServices\WorldEvents.ApplicationServices.csproj", "{6549CE1A-B78B-4551-AE1F-6FABD3BA7EF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5CAB95A9-A119-48AE-8D0B-29B0012E939C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BB177AC0-48B2-4EC6-8349-32B1E61D13B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{6D302B0B-76FB-4DB7-B48B-898A380E0EDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +48,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E504F8ED-0DA7-43CB-B0CA-5D79B5854334} = {BB177AC0-48B2-4EC6-8349-32B1E61D13B6}
+		{548E9029-19DA-42D0-A31A-B8DB0279C7E3} = {5CAB95A9-A119-48AE-8D0B-29B0012E939C}
+		{0975FACD-3B89-45B8-9341-0B524DD06D6E} = {5CAB95A9-A119-48AE-8D0B-29B0012E939C}
+		{6549CE1A-B78B-4551-AE1F-6FABD3BA7EF1} = {6D302B0B-76FB-4DB7-B48B-898A380E0EDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		LessCompiler = 04f01f3d-40ca-4771-8b3d-379ee5024879

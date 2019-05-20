@@ -76,5 +76,11 @@
     "inputFiles": [
       "wwwroot/css/fullcalendar.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/calendar/calendar.min.js",
+    "inputFiles": [
+      "wwwroot/lib/calendar/calendar.js"
+    ]
   }
 ]

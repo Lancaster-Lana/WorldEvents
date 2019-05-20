@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using WorldEvents.Events.Dto;
 using WorldEvents.Models;
 
 namespace WorldEvents.Controllers

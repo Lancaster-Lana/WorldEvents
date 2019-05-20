@@ -10,7 +10,7 @@ namespace WorldEvents.EntityFramework
         public override void PreInitialize()
         {
             //Init DB with secure information
-            Configuration.DefaultNameOrConnectionString = CONSTS.DBIdentityConnectionString;
+            Configuration.DefaultNameOrConnectionString = CONSTS.DBDataConnectionString;
 
             //Init 2-data DB
             //Database.SetInitializer(new SatteliteDBInitializer());

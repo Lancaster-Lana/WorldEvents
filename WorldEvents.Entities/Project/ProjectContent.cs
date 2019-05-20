@@ -13,7 +13,7 @@ namespace WorldEvents.Entities
         public string ShortDescription { get; set; }
 
         //public int ProjectId { get; set; }
-        //[ForeignKey("ProjectId")]
+        [ForeignKey("ProjectId")]
         public virtual Project Project { get; set; }
 
         /// <summary>

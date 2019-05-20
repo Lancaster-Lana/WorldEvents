@@ -1,13 +1,13 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace WorldEvents.Entities
 {
     public class ApplicationUser : IdentityUser//<Guid>
     {
-        public virtual UserProfile UserProfile { get; set; }
+        //[ForeignKey("UserId")]
+        public virtual UserProfile UserProfile { get; set; } = new UserProfile();// Default profile will be created
 
         //TODO: !!!
         public string RoleId { get; set; }
@@ -24,17 +24,4 @@ namespace WorldEvents.Entities
         //[ForeignKey("UserId")]
         public virtual ICollection<CategorySubscription> Subscriptions { get; set; } = new List<CategorySubscription>();
     }
-
-    //class IdentityUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, IUser, IUser<string>
-    //{
-    //    IdentityUser()
-    //    {
-    //        this.Id = Guid.NewGuid().ToString();
-    //    }
-
-    //    IdentityUser(string userName) : this()
-    //    {
-    //        this.UserName = userName;
-    //    }
-    //}
 }

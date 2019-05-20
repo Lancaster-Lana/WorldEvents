@@ -1,6 +1,7 @@
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Organizations;
 using WorldEvents.Authorization.Roles;
 
 namespace WorldEvents.Users
@@ -14,7 +15,10 @@ namespace WorldEvents.Users
             IRepository<Role> roleRepository,
             IRepository<UserPermissionSetting, long> userPermissionSettingRepository,
             IUnitOfWorkManager unitOfWorkManager,
-            IRepository<UserClaim, long> userClaimStore)
+            IRepository<UserClaim, long> userClaimStore,
+            IRepository<UserOrganizationUnit, long> organizationUnitRepository,
+            IRepository<OrganizationUnitRole, long> organizationUnitRoleRepository
+            )
             : base(
               userRepository,
               userLoginRepository,
@@ -22,7 +26,9 @@ namespace WorldEvents.Users
               roleRepository,
               userPermissionSettingRepository,
               unitOfWorkManager,
-              userClaimStore)
+              userClaimStore,
+              organizationUnitRepository, organizationUnitRoleRepository
+              )
         {
         }
     }

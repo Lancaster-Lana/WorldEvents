@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-//using Abp.Zero.EntityFramework;
-//using System.Data.Entity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using WorldEvents.Entities;
 
 namespace WorldEvents.DBModel
@@ -8,9 +8,14 @@ namespace WorldEvents.DBModel
     /// <summary>
     /// Data context (without secure data that in Identity Config)
     /// </summary>
-    public class SatteliteDbContext : DbContext //AbpZeroDbContext<Tenant, Role, User>
+    //[AutoRepositoryTypes(
+    //typeof(IRepository<>),
+    //typeof(IRepository<,>),
+    //typeof(Repository<>),typeof(Repository<,>))]
+    public class SatteliteDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string> //AbpZeroDbContext<Tenant, Role, User>
     {
         public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<EventRegistration> EventRegistrations { get; set; }
 
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<NewsContent> NewsContents { get; set; }
@@ -19,6 +24,24 @@ namespace WorldEvents.DBModel
         public virtual DbSet<ProjectContent> ProjectContents { get; set; }
         public virtual DbSet<ProjectRole> ProjectRoles { get; set; }
         public virtual DbSet<ProjectMember> ProjectMembers { get; set; }
+
+        #region Identity part
+        /// <summary>
+        /// Site application roles
+        /// </summary>
+        public DbSet<ApplicationRole> AppRoles { get; set; }
+        public DbSet<ApplicationUser> AppUsers { get; set; }
+        //public virtual DbSet<UsersInRoles> UsersInRoles { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
+
+        public virtual DbSet<Category> Categories { get; set; }
+        /// <summary>
+        /// Project roles
+        /// </summary>
+        public virtual DbSet<CategoryPermission> CategoryPermissions { get; set; }
+        public virtual DbSet<CategorySubscription> Subscriptions { get; set; }
+
+        #endregion
 
         static SatteliteDbContext()
         {
@@ -47,10 +70,19 @@ namespace WorldEvents.DBModel
             //options.FindExtension.
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) //DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            //TO BE MOVED to class UserMapping : EntityMappingBase<User>
+            //modelBuilder.Entity<ApplicationUser>()
+            //    .HasOne(e => e.UserProfile).HasForeignKey<ApplicationUser>(f => f.UserId)//Optional - to be created\filled up later
+            //    .WithOne(e => e.User)
+            //    .OnDelete(DeleteBehavior.Cascade);
+
+            //builder.Entity<IdentityUser>().ToTable("AppUsers");
+            modelBuilder.Entity<ApplicationUser>().ToTable("AppUsers");
+            modelBuilder.Entity<ApplicationRole>().ToTable("AppRoles");
 
             //   modelBuilder.ApplyConfiguration<Category>(new CategoryMapping()); //for Microsoft.EntityFrameworkCore
 

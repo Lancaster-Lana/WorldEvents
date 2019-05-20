@@ -5,3 +5,14 @@
 /.vs/WorldEvents/v15/Server/sqlite3/storage.ide
 /.vs/WorldEvents/v15/Server/sqlite3/db.lock
 /.vs/WorldEvents/v15/.suo
+/WorldEvents.EntityFramework/obj
+/WorldEvents.EntityFramework/bin/Debug/netcoreapp2.0
+/.vs/WorldEvents/DesignTimeBuild
+/WorldEvents.ApplicationServices/bin/Debug/netcoreapp2.0
+/WorldEvents.Core/bin/Debug/netcoreapp2.0
+/WorldEvents.Core/obj
+/WorldEvents.Entities/bin/Debug/netcoreapp2.0
+/WorldEvents.Entities/obj
+/WorldEvents.ApplicationServices/obj
+/WorldEvents/bin/Debug/netcoreapp2.0
+/WorldEvents/obj

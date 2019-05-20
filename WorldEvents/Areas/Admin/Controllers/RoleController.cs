@@ -77,7 +77,7 @@ namespace WorldEvents.Areas.Admin.Controllers
                     AddError(errorsList);
                 }
             }
-            return View("_AddEditApplicationRole", model);
+            return View("_AddEditRole", model);
         }
 
         [HttpGet]
@@ -87,7 +87,7 @@ namespace WorldEvents.Areas.Admin.Controllers
             {
                 var applicationRole = await roleManager.FindByIdAsync(id);
                 var model = applicationRole;
-                return PartialView("ConfirmDeleteApplicationRole", model);
+                return PartialView("ConfirmDeleteRole", model);
             }
 
             AddError("Cannot delete role is empty");

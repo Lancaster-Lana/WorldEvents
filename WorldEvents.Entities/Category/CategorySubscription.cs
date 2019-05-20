@@ -5,8 +5,8 @@ namespace WorldEvents.Entities
 {
     public class CategorySubscription : FullAuditedEntity<long>
     {
-        public virtual long CategoryId { get; set; }
-        [ForeignKey("CategoryId")]
+        //public long CategoryId { get; set; }
+        //[ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
         //[Column("UserId")]

@@ -10,7 +10,7 @@ namespace WorldEvents.Entities
     {
         //[Required]
         public long? CategoryId { get; set; }
-        [ForeignKey("CategoryId")]
+        //[ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
         //[Required]

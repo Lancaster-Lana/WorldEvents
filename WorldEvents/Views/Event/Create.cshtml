@@ -1,0 +1,62 @@
+﻿@model EventModel
+@{
+    //var participants = Model.Registrations?.Select(r => r.User).ToList();
+}
+<div id="eventModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="">
+            <form class="form-horizontal" method="POST" action="/Event/Register" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                        <input id="EventTitle" name="EventTitle" required value='@Model.Title' class="form-control" placeholder="Event name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Type</label>
+                    <div class="col-sm-10">
+                        <select id="EventType" name="EventType" class="form-control" value="@Model.EventType" title="@Model.EventType">
+                            @*<option value="? undefined:undefined ?"></option>*@
+                            <option value="Meeting" class="bg-primary text-primary">Meeting</option>
+                            <option value="SkypeCall" class="bg-warning text-warning">Skype Call</option>
+                            <option value="Conference" title="Conference" class="bg-success text-info">Conference</option>
+                            <option value="Birthday" class="bg-success text-success">Birthday</option>
+                            <option value="Work" class="bg-danger text-danger">Work</option>
+                            <option value="" class="bg-info text-info">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">From</label>
+                    <div class="col-sm-10 text-left">
+                        <input id="StartDate" name="StartDate" type="date" value='@Model.StartDate?.ToString("yyyy-MM-dd")' />
+                        <input id="StartTime" name="StartTime" type="time" value='@Model.StartDate?.ToString("HH:mm")' />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">To</label>
+                    <div class="col-sm-10 text-left">
+                        <input id="EndDate" name="EndDate" type="date" value='@Model.EndDate?.ToString("yyyy-MM-dd")' />
+                        <input id="EndTime" name="EndTime" type="time" value='@Model.EndDate?.ToString("HH:mm")' />
+                        @*@Html.ValidationMessageFor(m => m.EndDate)*@
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Participants</label>
+                    <div class="col-sm-8">
+                        <select id="participantDD" name="participantDD" multiple class="form-control selectpicker">
+                            @foreach (var par in Model.AllUsers)
+                            {
+                                <option class="badge">@par.Email </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <button id="newParticipant" data-toggle="modal" data-target="newParticipantDlg"> +New </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

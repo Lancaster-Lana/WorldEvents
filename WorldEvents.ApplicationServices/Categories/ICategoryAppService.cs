@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
+using WorldEvents.Categories.Dto;
 
 namespace WorldEvents.Categories
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Data.Entity.Migrations;
-using WorldEvents.DBModel;
-using WorldEvents.Entities;
+﻿using WorldEvents.DBModel;
 
 namespace WorldEvents
 {

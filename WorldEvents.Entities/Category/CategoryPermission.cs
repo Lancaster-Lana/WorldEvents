@@ -29,7 +29,7 @@ namespace WorldEvents.Entities
         public string Description { get; set; }
 
         public virtual long CategoryId { get; set; }
-        [ForeignKey("CategoryId")]
+        //[ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
         public virtual bool ReadOnly { get; set; }
@@ -41,7 +41,6 @@ namespace WorldEvents.Entities
                 return ReadOnly & Edit;
             }
         }
-
 
         // Which side can use this permission.
         //public MultiTenancySides MultiTenancySides { get; set; }

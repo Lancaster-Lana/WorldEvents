@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities.Auditing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,10 +12,10 @@ namespace WorldEvents.Entities
         //public string Name { get; set; }
 
         public long CategoryId { get; set; }
-        [ForeignKey("CategoryId")]
+        //[ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
-        public long? CoordinatorId { get; set; }
+        public Guid? CoordinatorId { get; set; }
         [ForeignKey("CoordinatorId")]
         public virtual UserProfile Coordinator { get; set; }
 

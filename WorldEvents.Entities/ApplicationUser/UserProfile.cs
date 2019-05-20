@@ -10,12 +10,15 @@ namespace WorldEvents.Entities
     /// <summary>
     /// UserProfile belong for some ApplicationUser.
     /// </summary>
-    public class UserProfile : FullAuditedEntity<long> //AbpUser<UserProfile>  
+    public class UserProfile : FullAuditedEntity<Guid> //AbpUser<UserProfile>  
     {
+        public string UserId { get; set; }
+
         /// <summary>
-        /// Parent user entity
+        /// Related user
         /// </summary>
-        public virtual ApplicationUser User { get; set; }
+        [ForeignKey("UserId")]
+        public ApplicationUser User { get; set; }
 
         [Required]
         public string FirstName { get; set; }

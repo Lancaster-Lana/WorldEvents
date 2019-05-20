@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Collections;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -6,10 +7,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Authentication.Google;
-
+using AutoMapper;
+using WorldEvents.Entities;
+using WorldEvents.Core;
 using WorldEvents.DBModel;
 using WorldEvents.Messaging;
-using WorldEvents.Entities;
+using WorldEvents.Core.Events;
+using WorldEvents.ApplicationServices.Events;
 
 namespace WorldEvents
 {
@@ -44,8 +48,12 @@ namespace WorldEvents
 
             //var options = new Authentication();
             //config.GetSection("Authentication").Bind(options);
-        }
 
+            //Mapper.Initialize(cfg =>
+            //{
+            //    cfg.AddProfile<AutoMapperProfile>();
+            //});
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)//, IDistributedCache cache)
@@ -54,17 +62,13 @@ namespace WorldEvents
             _testSecret = Configuration["MySecret"];
 
             //INIT DB
-            var identityConnection = Configuration.GetConnectionString("IdentityConnection"); //Configuration["Data:Identity:ConnectionString"];
-            services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(identityConnection));
-
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
-                    .AddEntityFrameworkStores<IdentityDbContext>()
-                    .AddDefaultTokenProviders();
-
-            string contentDBconnection = Configuration.GetConnectionString("DataConnection");//Configuration["Data:Sattelite:ConnectionString"];
-            services.AddDbContext<SatteliteDbContext>(options => options.UseSqlServer(contentDBconnection)
+            var dbConnection = Configuration.GetConnectionString("DataConnection"); //Configuration["Data:Identity:ConnectionString"];
+            services.AddDbContext<SatteliteDbContext>(options => options.UseSqlServer(dbConnection)
              //.UseInMemoryDatabase//UseMemoryCache//UseLoggerFactory//UseSqlite
              );
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                    .AddEntityFrameworkStores<SatteliteDbContext>()
+                    .AddDefaultTokenProviders();
 
             //INIT AUTHENTICATION with social networks
             services.AddAuthentication()
@@ -90,9 +94,32 @@ namespace WorldEvents
 
             services.AddMvc();
 
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<AutoMapperProfile>();
+            });
+
+            var mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+            //services.AddAutoMapper(); - old
+
             //INIT Application Services
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddSingleton<DbContext, SatteliteDbContext>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
+            //services.AddScoped<IRepository<Event, Guid>>(new EventRepository());
+            //services.AddScoped<IRepository<EventRegistration>>(new EventRegistrationRepository());
+
+            //Register domain (business logic) services 
+            services.AddScoped<IEventManager, EventManager>();
+
+            //Register app services
+            //EventCloudServiceBase
+            services.AddScoped<IEventRegistrationPolicy, EventRegistrationPolicy>();
+            services.AddScoped<IEventAppService, EventAppService>();
 
             //INIT Session
             services.AddSession();
@@ -138,7 +165,7 @@ namespace WorldEvents
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync($"Secret is {result}");
-            //});
+            //});       
 
             if (env.IsDevelopment())
             {

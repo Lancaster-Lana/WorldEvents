@@ -43,9 +43,7 @@ namespace WorldEvents.Users
         }
         public async Task RemoveFromRole(long userId, string roleName)
         {
-            CheckErrors(
-                await UserManager.RemoveFromRoleAsync(userId, roleName)
-               );
+            CheckErrors(await UserManager.RemoveFromRoleAsync(userId, roleName));
         }
 
         public async Task ProhibitPermission(ProhibitPermissionInput input)

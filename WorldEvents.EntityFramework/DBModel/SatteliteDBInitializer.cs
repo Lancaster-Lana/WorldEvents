@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Data.Entity;
+
 namespace WorldEvents.DBModel
 {
-    //public class SatteliteDBSInitializer : IDatabaseInitializer<SatteliteDbContext>
-    //{
-    //    public void InitializeDatabase(SatteliteDbContext context)
-    //    {
-    //        //Seeder.Seed(context);
-    //    }
-    //}
-
     /// <summary>
     ///  Data DB inializer (if not EntityCore)
     /// </summary>
@@ -28,6 +20,14 @@ namespace WorldEvents.DBModel
         }
     }
 
+    //public class SatteliteDBSInitializer : IDatabaseInitializer<SatteliteDbContext>
+    //{
+    //    public void InitializeDatabase(SatteliteDbContext context)
+    //    {
+    //        //Seeder.Seed(context);
+    //    }
+    //}
+
     /// <summary>
     /// Data DB inializer (if not EntityCore)
     /// </summary>
@@ -45,19 +45,4 @@ namespace WorldEvents.DBModel
             Console.WriteLine("Seeding done");
         }
     }*/
-
-    //public class IdentityDBInitializer : CreateDatabaseIfNotExists<WorldEventDbContext>
-    //{
-    //    protected override void Seed(WorldEventDbContext context)
-    //    {
-    //        base.Seed(context);
-
-    //        Console.WriteLine("Seeding...");
-
-    //        //Seed data to database
-    //        SeederIdentityDB.Seed(context);
-
-    //        Console.WriteLine("Seeding done");
-    //    }
-    //}
 }
