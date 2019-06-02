@@ -125,7 +125,7 @@
 									CreateEventDialog();
 									break;
 								case "delete":
-									//DeleteEventDialog(jsEvent);
+									DeleteEventDialog(jsEvent);
 									break;
 							}
 						},
@@ -327,7 +327,7 @@
 				'No',
 				'Yes, Delete it!'
 			],
-			dangerMode: true,
+			dangerMode: true
 		}).then(function (isConfirm) {
 			if (isConfirm)
 			{

@@ -16,3 +16,8 @@
 /WorldEvents.ApplicationServices/obj
 /WorldEvents/bin/Debug/netcoreapp2.0
 /WorldEvents/obj
+/WorldEvents.EntityFramework/bin/Debug/netcoreapp2.2
+/WorldEvents.Entities/bin/Debug/netcoreapp2.2
+/WorldEvents.ApplicationServices/bin/Debug/netcoreapp2.2
+/WorldEvents/bin/Debug/netcoreapp2.2
+/WorldEvents.Core/bin/Debug/netcoreapp2.2

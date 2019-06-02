@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Abp.Events.Bus;
 using Abp.UI;
+using Microsoft.EntityFrameworkCore;
 using WorldEvents.Entities;
 
 namespace WorldEvents.Core.Events
@@ -148,12 +149,30 @@ namespace WorldEvents.Core.Events
             return eventRegisteredUsers;
         }
 
+        /// <summary>
+        /// Get events user registered for
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
         public IEnumerable<Event> GetAllEventsForUserAsync(string userName)
         {
             var eventForUser = _eventRepository.GetAllIncluding(c => c.Registrations)
                 .Where(e => e.Registrations.Select(p => p.User.UserName).Contains(userName));
 
             return eventForUser;
+        }
+
+
+        /// <summary>
+        /// Get registered users for that event
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<EventRegistration>> GetEventRegistrationsAsync(Guid id)
+        {
+            var list = _eventRegistrationRepository.GetAllIncluding(r => r.User).Where(r => r.EventId == id);
+
+            return await list.ToListAsync();
         }
 
         /*

@@ -67,10 +67,12 @@ namespace WorldEvents.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         //[HttpPost]
-        public IActionResult Details(EventDto model)
+        public async Task<IActionResult> Details(EventDto model)
         {
             model.Description = model.Description ?? model.Title; //TODO:
-            //model.participants = Users.GetAll();
+            var eventRegistrations = _mapper.Map<IEnumerable<EventRegistrationDto>> ( await _eventService.GetEventRegistrationsAsync(model));
+            model.Registrations = eventRegistrations.ToList();// new List<EventRegistrationDto>();
+            //model.AllUsers = Users.GetAll();
             return PartialView(model);
         }
 

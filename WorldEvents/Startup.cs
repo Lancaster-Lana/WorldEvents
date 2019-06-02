@@ -138,9 +138,8 @@ namespace WorldEvents
             //var cacheEntryOptions = new DistributedCacheEntryOptions()
             //    .SetSlidingExpiration(TimeSpan.FromSeconds(30));
             //cache.Set("lastServerStartTime", val, cacheEntryOptions);
-
-
         }
+
         /// </summary>
         /// Use SQL Server Cache in Production
         /// <ItemGroup>

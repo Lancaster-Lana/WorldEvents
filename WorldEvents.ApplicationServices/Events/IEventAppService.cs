@@ -16,6 +16,13 @@ namespace WorldEvents.ApplicationServices.Events
         Task<IEnumerable<Event>> GetAllEventsForUserAsync(IIdentity user);
 
         /// <summary>
+        /// Get users, registered on event
+        /// </summary>
+        /// <param name="event"></param>
+        /// <returns></returns>
+        Task<IEnumerable<EventRegistration>> GetEventRegistrationsAsync(EventDto @event);
+
+        /// <summary>
         /// Register participant on the event(user must be registerd in the system)
         /// </summary>
         /// <param name="event"></param>

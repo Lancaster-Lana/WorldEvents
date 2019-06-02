@@ -26,6 +26,9 @@ namespace WorldEvents.Core.Events
 
         IEnumerable<Event> GetAllEventsForUserAsync(string userName);
 
+
+        Task<IEnumerable<EventRegistration>> GetEventRegistrationsAsync(Guid id);
+
         //Task<IReadOnlyList<User>> GetRegisteredUsersAsync(Event @event);
     }
 }

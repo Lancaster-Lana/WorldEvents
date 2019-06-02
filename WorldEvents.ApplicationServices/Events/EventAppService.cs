@@ -73,6 +73,11 @@ namespace WorldEvents.ApplicationServices.Events
 
             return _eventManager.Cancel(@event);
         }
+
+        public async Task<IEnumerable<EventRegistration>> GetEventRegistrationsAsync(EventDto @event)
+        {
+            return await _eventManager.GetEventRegistrationsAsync(@event.Id);
+        }
     }
 
     //[AbpAuthorize]
